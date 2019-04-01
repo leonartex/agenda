@@ -124,7 +124,7 @@
 
         $db = conexao();
 
-        $pg->contatos = $db->select('contatos', '*');
+        $pg->contatos = $db->select('contatos', '*', ['ORDER' => 'nome']);
         require_once('views/layout.php');
     });
 
