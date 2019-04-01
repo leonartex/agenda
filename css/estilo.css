@@ -1,0 +1,513 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+body {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    background: #2a2a2a /*Isto aqui é a porra do partido Novo?*/
+}
+
+#principal{
+    padding: 0px;
+    margin-top: 56px;
+}
+
+main {
+    background: #fafafa;
+    color: #2a2a2a;
+}
+
+main>.container-fluid>#conteudo {
+    padding-top: 15px;
+    min-height: 100vh;
+}
+
+footer {
+    padding: 15px;
+    color: #1a1a1a;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+footer ul {
+    padding: 0px;
+    list-style-type:none;
+    color: #fff;
+    font-size: 1.15rem;
+}
+
+footer a {
+    word-break: break-word;
+    text-decoration: underline;
+}
+
+footer a:hover, footer a:focus{
+    color: #1a1a1a;
+    background: #fff;
+}
+
+#voltar-topo{
+    right: 12px;
+    bottom: 12px;
+    width: 50px;
+    min-height: 65px;
+    font-size: 0.875rem;
+    position: fixed;
+    text-align: center;
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #1a1a1a;
+}
+
+#voltar-topo:hover, #voltar-topo:focus{
+    background: #adadad;
+    color: #000
+}
+
+p, tr {
+    font-family: Poppins, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 450;
+    line-height: 1.7rem;
+    color: #444
+}
+
+a,
+a:focus,
+a:hover, button, button:hover, button:focus{
+    color: inherit;
+    text-decoration: none;
+    transition: all .3s
+}
+
+a:focus,
+a:hover, button:hover, button:focus {
+    text-decoration: underline;
+}
+
+p > a, .itens ul{
+    font-weight: 450;
+}
+
+.social a{
+    font-size: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/*Sidebar*/
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.sidebar {
+    left: 0;
+    top: 0;
+    min-width: 200px;
+    max-width: 200px;
+    color: #fff;
+    transition: all .5s
+}
+
+.sidebar .sidebar-header {
+    padding: 15px;
+    background: #fff;
+    color: #000;
+}
+
+.sidebar ul.components {
+    padding: 20px 0px;
+    max-height: 100%
+}
+
+.sidebar p {
+    color: #fff;
+    margin-bottom: 0;
+    padding: .625rem
+}
+
+.gambiarra{
+    padding-top: 56px;
+}
+
+.sidebar ul li a {
+    padding: .625rem;
+    font-size: 1.1rem;
+    display: block
+}
+
+.sidebar ul li a:hover, .sidebar ul li a:focus{
+    color: #2a2a2a;
+    background: #fff
+}
+
+.sidebar ul li.active>a,
+a[aria-expanded=true] {
+    color: #fff;
+    background: #0e0e0e
+}
+
+ul ul a {
+    font-size: .9rem!important;
+    padding-left: 1.875rem!important;
+    background: #6d7fcc
+}
+
+
+/*Menu superior*/
+
+#superior {
+    margin-left: 0px;
+    padding: 8px;
+    background: #fff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+    font-weight: 500;
+}
+
+#superior .container-fluid{
+    padding: 0px;
+}
+
+#superior ul li a{
+    padding: 0.5rem;
+}
+#superior a:hover, #superior a:focus{
+    color: #fff;
+    background: #1a1a1a;
+}
+
+#colapsa {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    cursor: pointer;
+}
+
+#colapsa span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    transition: all .5s cubic-bezier(.81, -.33, .345, 1.375);
+    transform: none;
+    opacity: 1;
+    margin: 5px auto
+}
+
+#colapsa.active span {
+    margin: 0 auto
+}
+
+#colapsa span {
+    width: 100%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    opacity: 1;
+    color: #fff;            
+}
+
+#colapsa span:last-of-type {
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/bars-solid.svg);
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size: 22px;
+    color: #444;
+}
+
+#colapsa.active span:last-of-type {
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/times-solid.svg);
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size: 20px;
+}
+
+h1{
+    display: inline-flex;
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 600;
+    padding: 0rem;
+}
+
+ul .nav .navbar-nav{
+    width: auto;
+}
+
+@media(max-width:880px){
+    .desaparece-1{
+        display: none;
+    }
+}
+@media(max-width:767.98px){
+    .desaparece-2{
+        display: none;
+    }
+}
+
+/*Index*/
+
+.itens p {
+    text-align: left
+}
+
+.btn-item {
+    text-align: center;
+    padding: 15px;    
+    cursor: pointer;
+    border: 0;
+}
+
+.item-b .btn-item{
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #1a1a1a;
+}
+
+.item-p .btn-item{
+    background: #fafafa;
+    color: #000;
+    border: 2px solid #1a1a1a;
+}
+
+.btn-item:hover, .btn-item:focus {
+    background: #adadad!important;
+    color: #000!important;
+}
+
+.itens > div {
+    padding: 30px
+}
+
+.item-b {
+    background: #fafafa;
+}
+
+.item-p {
+    background: #2a2a2a;
+    color: #ffffff!important;
+}
+
+.itens ul{
+    list-style-type:none;
+    padding: 0px;
+    font-size: 1.1rem;
+}
+
+.item-b p, .item-b h2, .item-b h3, .item-b h4, .item-b span, .item-b ul{
+    color: #2a2a2a;
+}
+
+.item-p p, .item-p h2, .item-p h3, .item-p h4, .item-p span, .item-p ul{
+    color: #ffffff;
+}
+
+.item-p > div{
+    width: 100%;
+}
+
+#conteudo p {
+    text-align: left
+}
+
+.texto{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*Cronograma*/
+.nav-tabs{
+    border-bottom: 2px solid #000;
+    margin-top: 0.75rem;
+}
+
+.nav-item.nav-link.active, .nav-tabs{
+    border-bottom: 0px;
+}
+
+.nav-tabs .nav-item{
+    margin-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.crono{
+    overflow-x:auto;
+}
+
+table.table, .table th{
+    background: #fff;
+    border: 2px solid;
+    border-top: 0px;
+    border-color: #dee2e6;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+caption{
+    color: #4A4A4A;
+    padding:0px;
+}
+
+.horario{
+    width: 112.5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.alterado{
+    color: red;
+    text-decoration-style: solid;
+}
+
+/*Oficinas e Palestras*/
+.itens-lista{
+    padding-top: 0px;
+    padding-bottom: 25px
+}
+.itens-lista span{
+    font-size: 0.85rem;
+}
+
+.itens-lista img{
+    margin-bottom: 15px
+}
+
+.itens-lista a{
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.itens-lista.item-b a:hover, .itens-lista.item-b a:focus{
+    color: #fff;
+    background: #1a1a1a;
+}
+
+.itens-lista.item-p a:hover, .itens-lista.item-p a:focus{
+    color: #1a1a1a;
+    background: #fff;
+}
+
+/*Slider*/
+#slider h2{
+    padding: 8px;
+    padding-left: 30px;
+    margin: 0;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    background: #000;
+    width: 16.2%;
+    margin-top: 0px;
+    margin-bottom: 54px;
+}
+
+.carousel-caption:hover, .carousel-caption:focus{
+    opacity: 1;
+    transition: all .3s
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    padding: 20%;
+}
+
+.indicadores-slider{
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+.barra-slider button{
+    padding: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background: #1a1a1a;
+    margin: 3px;
+    border: 2px solid #1a1a1a;
+}
+
+.barra-slider button.active{
+    color: #000;
+    background: #fafafa;
+    border: 2px solid #1a1a1a;
+}
+
+.barra-slider button:hover, .barra-slider button:focus{
+    background: #adadad;
+    color: #000;
+    border: 2px solid #1a1a1a
+}
+
+.carousel-caption h3, .carousel-caption p{
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.carousel-caption{
+    background: #fafafa;
+    padding: 15px;
+    bottom: 0;
+    opacity: .7;
+    transition: all .3s
+}
+
+/* Formulários */
+.item-p form label, .item-p form small{
+    color: #fff!important;
+}
+
+.item-b form label, .item-b form small{
+    color: #2a2a2a!important;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 350px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    padding-left: 100px;
+    border: 5px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
