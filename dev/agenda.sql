@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Abr-2019 às 05:33
+-- Generation Time: 18-Abr-2019 às 21:06
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -22,8 +22,6 @@ SET time_zone = "+00:00";
 -- Database: `agenda`
 --
 
-CREATE DATABASE agenda;
-USE agenda;
 -- --------------------------------------------------------
 
 --
@@ -38,17 +36,38 @@ CREATE TABLE `contatos` (
   `estado` char(2) DEFAULT NULL,
   `email` varchar(65) DEFAULT NULL,
   `info` text,
-  `categoria` varchar(20) DEFAULT NULL
+  `categoria` varchar(20) DEFAULT NULL,
+  `usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `contatos`
 --
 
-INSERT INTO `contatos` (`id`, `nome`, `telefone`, `cidade`, `estado`, `email`, `info`, `categoria`) VALUES
-(3, 'ClÃ©ber Machado', '(15) 5544-4455', 'Rio de Janeiro', 'RJ', 'cleber@globo.com', 'Hoje sim', 'Cliente'),
-(4, 'Herson Capri', '(55) 9999-9999', 'SÃ£o Borja', 'RS', 'herson@capri.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc ipsum, malesuada ac mi sit amet, consectetur venenatis ipsum. Mauris eleifend varius turpis.', 'FuncionÃ¡rio'),
-(5, 'Ednaldo Pereira', '(55) 3431-3431', 'SÃ£o Borja', 'RS', 'ednaldo@vale.com.br', '', 'Cliente');
+INSERT INTO `contatos` (`id`, `nome`, `telefone`, `cidade`, `estado`, `email`, `info`, `categoria`, `usuario`) VALUES
+(3, 'ClÃ©ber Machados', '(15) 5544-44557', 'Rio de Janeiro', 'RJ', 'cleber@globo.com', 'Hoje sim', 'Cliente', 1),
+(4, 'Herson Capri', '(55) 9999-9997', 'SÃ£o Borja', 'RS', 'herson@capri.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc ipsum, malesuada ac mi sit amet, consectetur venenatis ipsum. Mauris eleifend varius turpis.', 'FuncionÃ¡rio', 1),
+(5, 'Ednaldo Pereira', '(55) 3431-3431', 'SÃ£o Borja', 'RS', 'ednaldo@vale.com.br', '', 'Cliente', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(70) DEFAULT NULL,
+  `senha` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
+(1, 'leo@leo.com', '123'),
+(2, 'herson@capri', '234');
 
 --
 -- Indexes for dumped tables
@@ -58,6 +77,13 @@ INSERT INTO `contatos` (`id`, `nome`, `telefone`, `cidade`, `estado`, `email`, `
 -- Indexes for table `contatos`
 --
 ALTER TABLE `contatos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `usuario` (`usuario`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -68,7 +94,23 @@ ALTER TABLE `contatos`
 -- AUTO_INCREMENT for table `contatos`
 --
 ALTER TABLE `contatos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `contatos`
+--
+ALTER TABLE `contatos`
+  ADD CONSTRAINT `contatos_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
