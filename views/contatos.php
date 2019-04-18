@@ -58,7 +58,7 @@
 
     function deletar(id, nome){
         if(confirm('Deseja deletar '+nome+'?')){
-            window.location.replace('<?=URL_BASE?>/excluir/'+id)
+            window.location.replace('<?=URL_BASE?>/contato/excluir/'+id)
         }
     }
 

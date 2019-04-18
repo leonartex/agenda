@@ -26,10 +26,17 @@
             </div>
             <div class="d-flex justify-content-end">
                 <ul class="nav navbar-nav">                    
-                    <li class="desaparece-2"><a href="<?=URL_BASE?>/contatos/">Contatos</a></li>
+                    <li class="desaparece-2"><a href="<?=URL_BASE?>/">Contatos</a></li>
+                    <li class="desaparece-2"><a href="<?=URL_BASE?>/adicionar/">Adicionar</a></li>
+                    <?php if(!isset($_SESSION['email'])){ ?>
+                        <li class="desaparece-2"><a href="<?=URL_BASE?>/login/">Entrar</a></li>
+                    <?php }else{?>
+                        <li class="desaparece-2"><a href="<?=URL_BASE?>/logout/">Sair</a></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
+        
     </nav>
     </header>
     <div class="wrapper">
@@ -39,8 +46,14 @@
                     <p><?=$pg->ajuda?></p>
                 </div>
                 <ul id="navegacao" class="list-unstyled components">
-                    <li <?php if($pg->view == 'agenda.php') echo 'class="active"';?>><a href="<?= URL_BASE ?>/">Início</a></li>
-                    <li <?php if($pg->view == 'contatos.php') echo 'class="active"';?>><a href="<?= URL_BASE ?>/contatos/">Contatos</a></li>
+                    <li <?php if($pg->view == 'contatos.php') echo 'class="active"';?>><a href="<?= URL_BASE ?>/">Contatos</a></li>
+                    <li <?php if($pg->view == 'agenda.php') echo 'class="active"';?>><a href="<?= URL_BASE ?>/adicionar/">Adicionar contato</a></li>
+                    <?php if(!verificaSessao()){ ?>
+                        <li <?php if($pg->view == 'login.php') echo 'class="active"';?>><a href="<?= URL_BASE ?>/login/">Entrar</a></li>
+                    <?php }else{?>
+                        <li <?php if($pg->view == 'usuario/editar.php') echo 'class="active"';?>><a href="<?= URL_BASE ?>/conta/">Conta</a></li>
+                        <li><a href="<?= URL_BASE ?>/logout/">Sair</a></li>
+                    <?php } ?>
                 </ul>
             </nav>
         </div>

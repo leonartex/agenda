@@ -18,7 +18,7 @@
         <div class="itens row">
             <div class="itens-lista item-b col-md-6">
                 <h2>Registrar contato</h2>
-                <form action="<?=URL_BASE?>/adicionar/" method="post">
+                <form action="<?=URL_BASE?>/contato/gravar/" method="post">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="Inserir nome de contato">
