@@ -15,18 +15,18 @@ class Contato_modelo{
 
     public function pegaTodos(){
         $db = conexao();
-        //$contatos = $db->select('contatos', '*',['LIMIT' => 5, 'ORDER' => ['id' => 'DESC']]);
-        $contatos = $db->select('contatos', '*',['ORDER' => 'nome']);
-        return $contatos;
+        return $db->select('contatos', '*',['usuario' => $_SESSION['id']],['ORDER' => 'nome']);
     }
 
     public function pegaPorId($id){
         $db = conexao();
-        $contatos = $db->select('contatos', '*',['id' => $id]);
-        return $contatos;
+        if($db->count('contatos', ['id' => $id, 'usuario' => $_SESSION['id']]) != 0)
+            return $db->select('contatos', '*',['id' => $id, 'usuario' => $_SESSION['id']]);
+        else   
+            header('Location: '.URL_BASE.'?status=erro&tipo=acessoNegado', 303);
     }
 
-    public function insere($nome, $telefone, $cidade, $estado, $email, $info, $categoria){
+    public function insere($nome, $telefone, $cidade, $estado, $email, $info, $categoria, $usuario){
         $db = conexao();
 
         $db->insert('contatos', [
@@ -36,13 +36,14 @@ class Contato_modelo{
             'estado' => $estado,
             'email' => $email,
             'info' => $info,
-            'categoria' => $categoria
+            'categoria' => $categoria,
+            'usuario' => $usuario
         ]);
     }
 
-    public function atualiza($id, $nome, $telefone, $cidade, $estado, $email, $info, $categoria){
+    public function atualiza($id, $nome, $telefone, $cidade, $estado, $email, $info, $categoria, $usuario){
         $db = conexao();
-
+        
         $db->update('contatos', [
             'nome' => $nome,
             'telefone' => $telefone,
@@ -50,7 +51,8 @@ class Contato_modelo{
             'estado' => $estado,
             'email' => $email,
             'info' => $info,
-            'categoria' => $categoria
+            'categoria' => $categoria,
+            'usuario' => $usuario
         ],[
             'id' => $id
         ]);

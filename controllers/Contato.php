@@ -35,10 +35,10 @@ class Contato{
             $url = '/editar/'.$id;
         try{
             if($id == 0){
-                $contato->insere($nome, $telefone, $cidade, $estado, $email, $info, $categoria);
+                $contato->insere($nome, $telefone, $cidade, $estado, $email, $info, $categoria, $_SESSION['id']);
             }else{
                 $aux = $contato->pegaPorId($id);
-                $contato->atualiza($id, $nome, $telefone, $cidade, $estado, $email, $info, $categoria);
+                $contato->atualiza($id, $nome, $telefone, $cidade, $estado, $email, $info, $categoria, $_SESSION['id']);
             }
             header('Location: '.URL_BASE.$url.'?status=sucesso', 303);
         }catch(Exception $e){
